@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Restaurant Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline;
+            margin: 0 1rem;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+        }
+
+        nav ul li a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            padding: 2rem;
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Restaurant</h1>
+        <nav>
+            <ul>
+                <li><a href="#" id="homeLink">Home</a></li>
+                <li><a href="#" id="menuLink">Menu</a></li>
+                <li><a href="#" id="aboutLink">About Us</a></li>
+                <li><a href="#" id="contactLink">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main id="mainContent">
+        <section id="homeSection">
+            <h2>Home</h2>
+            <p>Welcome to our restaurant. We offer the best food in town!</p>
+        </section>
+        <section id="menuSection" class="hidden">
+            <h2>Menu</h2>
+            <p>Check out our delicious menu options.</p>
+        </section>
+        <section id="aboutSection" class="hidden">
+            <h2>About Us</h2>
+            <p>Learn more about our story and team.</p>
+        </section>
+        <section id="contactSection" class="hidden">
+            <h2>Contact</h2>
+            <p>Get in touch with us.</p>
+        </section>
+    </main>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            const homeLink = document.getElementById('homeLink');
+            const menuLink = document.getElementById('menuLink');
+            const aboutLink = document.getElementById('aboutLink');
+            const contactLink = document.getElementById('contactLink');
+
+            const homeSection = document.getElementById('homeSection');
+            const menuSection = document.getElementById('menuSection');
+            const aboutSection = document.getElementById('aboutSection');
+            const contactSection = document.getElementById('contactSection');
+
+            homeLink.addEventListener('click', function () {
+                showSection(homeSection);
+            });
+
+            menuLink.addEventListener('click', function () {
+                showSection(menuSection);
+            });
+
+            aboutLink.addEventListener('click', function () {
+                showSection(aboutSection);
+            });
+
+            contactLink.addEventListener('click', function () {
+                showSection(contactSection);
+            });
+
+            function showSection(section) {
+                homeSection.classList.add('hidden');
+                menuSection.classList.add('hidden');
+                aboutSection.classList.add('hidden');
+                contactSection.classList.add('hidden');
+
+                section.classList.remove('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
